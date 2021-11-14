@@ -6,7 +6,7 @@ export function Navigation() {
     <div>
       <ul>
         {examples.map((example, index) => (
-          <li>
+          <li key={index}>
             <Link to={`/example${index}`}>
               Example {index}: {example.description}
             </Link>

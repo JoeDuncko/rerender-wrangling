@@ -9,7 +9,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigation />} />
         {examples.map((example, index) => (
-          <Route path={`/example${index}`} element={example.component} />
+          <Route
+            key={index}
+            path={`/example${index}`}
+            element={example.component}
+          />
         ))}
       </Routes>
       <footer>
