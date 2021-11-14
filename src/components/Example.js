@@ -22,7 +22,7 @@ export function Example({ exampleIndex, children }) {
           justifyContent: "space-evenly",
         }}
       >
-        {previousExampleIndex > 0 ? (
+        {previousExampleIndex >= 0 ? (
           <Link to={`/example${previousExampleIndex}`}>Prevous example</Link>
         ) : (
           <span style={{ color: "gray" }}>Prevous example</span>
