@@ -16,7 +16,12 @@ export function Example({ exampleIndex, children }) {
 
       {children}
 
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+        }}
+      >
         {previousExampleIndex > 0 ? (
           <Link to={`/example${previousExampleIndex}`}>Prevous example</Link>
         ) : (
