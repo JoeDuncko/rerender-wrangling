@@ -6,7 +6,7 @@ import { useCountRerenders } from "../hooks/useCountRerenders";
 export function Example01({ exampleIndex }) {
   const colorState = useState(() => getRandomColor());
 
-  const rerenderCount = useCountRerenders();
+  const rerenderCount = useCountRerenders({ exampleIndex });
 
   return (
     <Example exampleIndex={exampleIndex}>
@@ -22,7 +22,7 @@ export function Example01({ exampleIndex }) {
 }
 
 const Component1 = ({ colorState: [color, setColor] }) => {
-  const rerenderCount = useCountRerenders();
+  const rerenderCount = useCountRerenders({ componentIndex: 1 });
 
   return (
     <div style={{ backgroundColor: color }}>
@@ -37,7 +37,7 @@ const Component1 = ({ colorState: [color, setColor] }) => {
 };
 
 const Component2 = ({ colorState: [color, setColor] }) => {
-  const rerenderCount = useCountRerenders();
+  const rerenderCount = useCountRerenders({ componentIndex: 2 });
 
   return (
     <div style={{ backgroundColor: color }}>
