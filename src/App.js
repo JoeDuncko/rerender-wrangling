@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { ExampleO1 } from "./views/Example01";
+import { examples } from "./constants/examples";
 import { Navigation } from "./views/Navigation";
 
 function App() {
@@ -8,7 +8,9 @@ function App() {
       <h1>React Rerender Wrangling examples</h1>
       <Routes>
         <Route path="/" element={<Navigation />} />
-        <Route path="/example1" element={<ExampleO1 />} />
+        {examples.map((example, index) => (
+          <Route path={`/example${index}`} element={example.component} />
+        ))}
       </Routes>
       <footer>
         by <a href="https://joeduncko.com/">Joe Duncko</a>
