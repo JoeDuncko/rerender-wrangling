@@ -6,7 +6,7 @@ import { useCountRerenders } from "../hooks/useCountRerenders";
 export function Example00({ exampleIndex }) {
   const [color, setColor] = useState(() => getRandomColor());
 
-  const rerenderCount = useCountRerenders();
+  const rerenderCount = useCountRerenders({ exampleIndex });
 
   return (
     <Example exampleIndex={exampleIndex}>
